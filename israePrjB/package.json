@@ -1,0 +1,30 @@
+{
+  "name": "israeprjb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js --ext js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "elevenlabs": "^0.8.2",
+    "elevenlabs-node": "^2.0.3",
+    "express": "^4.19.2",
+    "ffmpeg-static": "^5.2.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.38.0",
+    "node": "^20.15.0",
+    "openai": "^4.52.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
