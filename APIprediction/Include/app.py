@@ -16,7 +16,7 @@ import yfinance as yf
 app = Flask(__name__)
 
 # Charger le modèle
-model = tf.saved_model.load('C:\\Users\\Israe\\Downloads\\content\\apple')  # Remplacez par le chemin vers votre modèle
+model = tf.saved_model.load('C:\\Users\\Israe\\Downloads\\content\\apple')  
 
 # Fonction pour prédire les prix sur 90 jours
 def predict_price_60_days(data):
@@ -26,7 +26,7 @@ def predict_price_60_days(data):
 
     # Créer les séquences
     seq_length = 60
-    last_sequence = scaled_data[-seq_length:]  # Prendre la dernière séquence
+    last_sequence = scaled_data[-seq_length:] 
 
     # Préparer l'entrée pour le modèle
     X = np.reshape(last_sequence, (1, last_sequence.shape[0], 1)).astype(np.float32)
@@ -38,7 +38,7 @@ def predict_price_60_days(data):
     # Convertir en float et inverse la normalisation
     predicted_price = scaler.inverse_transform(predicted_price.numpy())
     
-    return float(predicted_price[0][0])  # Retourner la prédiction comme float
+    return float(predicted_price[0][0])  
 
 
 @app.route('/predict', methods=['POST'])
